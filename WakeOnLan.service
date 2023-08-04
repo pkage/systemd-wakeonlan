@@ -1,0 +1,12 @@
+[Unit]
+Description=Enable wake on lan on the network card
+Requires=network-online.target 
+After=network-online.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/bin/enablewakeonlan
+
+[Install]
+WantedBy=multi-user.target
